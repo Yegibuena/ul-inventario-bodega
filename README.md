@@ -109,9 +109,7 @@ permitió rediseñar toda la interfaz de un tema oscuro a uno blanco/azul
 editando un solo archivo de configuración sin tocar la lógica.
 
 **Lo que fue más difícil:** coordinar variables de entorno entre proyectos de
-Vercel (hubo confusión inicial entre un proyecto previo llamado "aat" y el
-proyecto real de esta app) — se resolvió verificando explícitamente el nombre
-del proyecto en cada paso, en vez de asumirlo.
+Vercel (hubo confusión inicial entre un proyecto previo) 
 
 **Lo que mejoraría con más tiempo:** autenticación individual por miembro del
 staff (en vez de un código compartido), notificaciones por WhatsApp además de
@@ -122,10 +120,20 @@ correo, y códigos QR para no tener que teclear el SKU.
 1. Brief inicial completo describiendo el problema real de Student Life, los
    campos exactos de ingreso/salida/regreso, y el requisito de no borrar
    inventario sino cambiar su `status`.
+
+Rol: experto en versel: npx plugins add vercel/vercel-plugin y supabase, queremos hacer segun los contenidos vistos en el curso Applied algoritmic Thinking un control de inventario.
+
+Problema: dentro de la universidad de la libertad, el area de student life tiene inventario en excel sobre la bodega con los materiales de clubes y extras que constantemente estan en uso pero no tienen notificaciones de inventario, no saben a que alumno le prestaron tal articulo, y no hay un seguimiento lineal de ellos.
+
+Solucion: vamos a crear un app web con el dominio de versel para que el equipo de la UL la pueda utilizar, usando supabase como base de datos de todo lo que se registrara, y github para subir nuestros repositorios. 
+Tareas: decodifica una interfaz grafica super intuitiva para el ingreso en el invetario y salidas del mismo, para el ingreso debe contener los campos: articulo, club, descripcion, sku (numero de identificación), FOTO y estado del material. Ten en cuenta que por ejemplo con los balones se pueden repetir entonces la identificacion del articulo diferenciandolo es importante, para la salida d los materiales solo queremos la matricula del alumno, dia del prestamo, hora , y SKU, para los regresos del prestamos dia, hora, matricula y sku. dentro de supabase en lugar de borrar inventario solo ponle un status como "prestado" y que se cambie a "en bodega " cuando lo rewgresen, en caso de que se pierda algun material a la hora del regreso debe estar el status de calidad del material, y poner una opcion de "perdido" lo cual tambien debe estar reflejado en la base de datos
+
+puedes ser creativo y agregar cosas que mejoren la operacion de esto que te pido, invetiga mas recursos si es necesario, si tienes limitaciones dime y dame instrucciones claras de lo que quieres que realice.
+
+
 2. Iteraciones pidiendo cubrir temas específicos del curso (regex, sets,
    loops, lectura de documentos, limpieza de datos, APIs que se hablan entre
    sí, Pandas/Seaborn) aplicados como features reales, no ejercicios sueltos.
-3. Ampliación del dominio del problema: consumibles con cantidad, kits de
-   catering reutilizables, y mínimos/máximos con notificación automática.
-4. Rediseño visual completo (blanco/azul, navegación por categorías con
-   botones grandes) sin perder ninguna funcionalidad ya construida.
+   
+Con esta base, y arreglando los errores en Versel, quiero que implementes:Migración del Excel + limpieza de datos (2.14/3.22), Alerta automática por correo de préstamos vencidos (2.15), Notebook de Pandas/Seaborn con gráficas (3.18-3.21), Alta masiva con loops (1.7), Validación con regex de SKU/matrícula (1.9), Detector de duplicados con sets (1.5)
+
