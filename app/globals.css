@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .panel {
+    @apply bg-white border border-bodega-line rounded-2xl shadow-sm;
+  }
+
+  .tag-stub {
+    @apply bg-bodega-panel border border-bodega-line rounded-xl px-3 py-2 font-mono text-sm text-bodega-paper;
+  }
+
+  .stamp {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .stamp-ok {
+    @apply stamp bg-green-50 text-bodega-ok border border-green-200;
+  }
+  .stamp-out {
+    @apply stamp bg-blue-50 text-bodega-out border border-blue-200;
+  }
+  .stamp-lost {
+    @apply stamp bg-red-50 text-bodega-lost border border-red-200;
+  }
+
+  .btn-primary {
+    @apply bg-bodega-tag text-white font-semibold px-5 py-3 rounded-xl hover:bg-bodega-tagDark transition-colors shadow-sm disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white border border-bodega-line text-bodega-paper font-semibold px-5 py-3 rounded-xl hover:border-bodega-tag hover:text-bodega-tag hover:bg-blue-50 transition-colors;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-bodega-line rounded-xl px-3 py-2.5 text-bodega-paper placeholder:text-bodega-muted focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-bodega-tag transition-colors;
+  }
+
+  .field-label {
+    @apply block text-sm text-bodega-muted font-medium mb-1.5;
+  }
+
+  /* Botón grande y muy visual para las páginas de categoría (Inventario, Movimientos, Catering) */
+  .action-card {
+    @apply panel p-6 flex items-start gap-4 hover:border-bodega-tag hover:shadow-md transition-all text-left w-full;
+  }
+
+  .action-card-icon {
+    @apply shrink-0 w-12 h-12 rounded-xl bg-blue-50 text-bodega-tag flex items-center justify-center;
+  }
+}
